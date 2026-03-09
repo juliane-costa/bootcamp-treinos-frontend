@@ -63,10 +63,10 @@ Exemplo:
 
 ```tsx
 // page.tsx (Server Component)
-import { getHomeDate } from "@/lib/api/fetch-generated";
+import { getHomeData } from "@/lib/api/fetch-generated";
 
 const Home = async () => {
-  const data = await getHomeDate(new Date());
+  const data = await getHomeData(new Date());
 
   return <ClientComponent data={data} />;
 };
@@ -74,10 +74,10 @@ const Home = async () => {
 export default Home;
 
 // client-component.tsx (Client Component)
-import { useGetHomeDate } from "@/lib/api/rc-generated";
+import { useGetHomeData } from "@/lib/api/rc-generated";
 
 export const ClientComponent = (props) => {
-  const result = useGetHomeDate(props.today, {
+  const result = useGetHomeData(props.today, {
     query: { initialData: props.data },
   });
 
